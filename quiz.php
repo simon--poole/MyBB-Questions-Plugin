@@ -4,7 +4,6 @@ session_start();
 define('IN_MYBB', 1); // Are we in MyBB? Yep!
 require "./global.php"; // We need this to get the templates and database functions.
 function get_random_numbers($num, $max){
-	echo $max;
 	$array = array();
 	while($num--){
 		do {
@@ -165,8 +164,7 @@ $message = "
 {$headerinclude}
 <script>
 function check(){
-	var c = confirm('Are you sure you want to submit? Please make sure you have answered all the questions to the best of your ability.');
-	return c;
+	return confirm('Are you sure you want to submit? Please make sure you have answered all the questions to the best of your ability.');
 }
 </script>
 </head>
