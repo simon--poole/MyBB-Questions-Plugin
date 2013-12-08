@@ -89,8 +89,7 @@ if($act == "doquiz"){
 	$i=0;
 	if(!isset($_SESSION['questions'])) header('Location: quiz.php');
 	foreach($_SESSION['questions'] as $qid){
-		if($i++%2 == 0) $td = 1;
-		else $td = 2;
+		$td = ($i++%2 == 0 ? 1 : 2);
 		$query = $db->simple_select("t10q_questions", "*", "`qid`='".$qid."'");
 		$question = $db->fetch_array($query);
 		if($db->num_rows($query) > 0){
